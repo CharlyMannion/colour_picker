@@ -1,4 +1,8 @@
 /* Exercise 2: Color picker */
-function setPreviewColor() {
-    $('.preview').css('background-color', 'purple');
+function setPreviewColor(inputColor) {
+    $('.preview').css('background-color', inputColor);
 }
+
+$(document).on('keyup', '#color', function() {
+    setPreviewColor($('#color').val());
+})
