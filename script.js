@@ -36,3 +36,6 @@ function randomiseColor() {
     return randomSelection;
 }
 
+// var items = $("#colors .item");
+// var itemToRemove = $("#colors .item").last();
+// var newItems = items.remove(itemToRemove);
