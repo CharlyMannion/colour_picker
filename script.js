@@ -1,5 +1,5 @@
 /* Exercise 2: Color picker */
-var defaultColors = [ '22ac5e', 'd68236', '770077' ];
+var defaultColors = [ 'rgb(132, 73, 209)', 'rgb(243, 71, 9)', 'rgb(230, 22, 147)'];
 
 $(document).ready(function() {
     defaultColors.forEach(function(defaultColor) {
