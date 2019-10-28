@@ -1,4 +1,12 @@
 /* Exercise 2: Color picker */
+var defaultColors = [ '22ac5e', 'd68236', '770077' ];
+
+$(document).ready(function() {
+    defaultColors.forEach(function(defaultColor) {
+        addBox(defaultColor);
+    });
+  });
+
 $(document).on('keyup', '#color', function() {
     setPreviewColor($('#color').val());
 });
