@@ -1,10 +1,13 @@
 /* Exercise 2: Color picker */
 var defaultColors = [ 'rgb(132, 73, 209)', 'rgb(243, 71, 9)', 'rgb(230, 22, 147)'];
+// var randomSelection = ''
 
 $(document).ready(function() {
     defaultColors.forEach(function(defaultColor) {
         addBox(defaultColor);
     });
+    var randomColorResult = randomiseColor();
+    $('.preview').css('background-color', randomColorResult);
   });
 
 $(document).on('keyup', '#color', function() {
@@ -28,5 +31,8 @@ function addBox(color) {
     $('#colors').prepend(newBox);
 }
 
-
+function randomiseColor() {
+    var randomSelection = defaultColors[Math.floor( Math.random() * defaultColors.length )];
+    return randomSelection;
+}
 
