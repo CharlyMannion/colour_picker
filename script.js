@@ -15,9 +15,17 @@ $(document).on('keyup', '#color', function() {
 });
 
 $(document).on('click', '#add-to-favorite', function() {
-    var boxColor = $('#color').val();
-    addBox(boxColor);
-    $('#color').val('')
+    if ($("#colors .item").length >= 16) {
+        $("#colors .item").last().remove();
+        var boxColor = $('#color').val();
+        addBox(boxColor);
+        $('#color').val('')
+    } 
+    else {
+        var boxColor = $('#color').val();
+        addBox(boxColor);
+        $('#color').val('')
+    };
 });
 
 
@@ -36,6 +44,3 @@ function randomiseColor() {
     return randomSelection;
 }
 
-// var items = $("#colors .item");
-// var itemToRemove = $("#colors .item").last();
-// var newItems = items.remove(itemToRemove);
