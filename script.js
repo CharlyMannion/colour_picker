@@ -7,22 +7,40 @@ $(document).ready(function() {
     });
     var randomColorResult = randomiseColor();
     $('.preview').css('background-color', randomColorResult);
+
+    $(document).on('keyup', '#color', function() {
+        setPreviewColor($('#color').val());
+    });
+    
+    $(document).on('click', '#add-to-favorite', function() {
+        if ($("#colors .item").length >= 16) {
+            $("#colors .item").last().remove();
+            setBoxColour();
+        } 
+        else {
+            setBoxColour();
+        };
+        $('#color').focus();
+    });
+
+    var previewColor;
+    $(document).on('mouseenter', '.item',  function(){
+      previewColor = $('.preview').css('background-color');
+  
+      setPreviewColor($(this).css('background-color'));
+    }).on('mouseleave', '.item', function() {
+      setPreviewColor(randomiseColor());
+    });
+
+      // var previewColor;
+    // $('.item').mouseenter(function() {
+    //     previewColor = $('.preview').css('background-color');
+    // });
+    // $('.item').mouseleave(function() {
+    //     setPreviewColor(randomiseColor());
+    // })
+
   });
-
-$(document).on('keyup', '#color', function() {
-    setPreviewColor($('#color').val());
-});
-
-$(document).on('click', '#add-to-favorite', function() {
-    if ($("#colors .item").length >= 16) {
-        $("#colors .item").last().remove();
-        setBoxColour();
-    } 
-    else {
-        setBoxColour();
-    };
-    $('#color').focus();
-});
 
 function setBoxColour() {
     var boxColor = $('#color').val();
