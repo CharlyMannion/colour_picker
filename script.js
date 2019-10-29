@@ -1,6 +1,5 @@
 /* Exercise 2: Color picker */
 var defaultColors = [ 'rgb(132, 73, 209)', 'rgb(243, 71, 9)', 'rgb(230, 22, 147)'];
-// var randomSelection = ''
 
 $(document).ready(function() {
     defaultColors.forEach(function(defaultColor) {
@@ -20,7 +19,7 @@ $(document).on('click', '#add-to-favorite', function() {
         setBoxColour();
     } 
     else {
-        setBoxColour();
+        setBoxColour();git 
     };
 });
 
