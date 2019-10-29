@@ -17,16 +17,18 @@ $(document).on('keyup', '#color', function() {
 $(document).on('click', '#add-to-favorite', function() {
     if ($("#colors .item").length >= 16) {
         $("#colors .item").last().remove();
-        var boxColor = $('#color').val();
-        addBox(boxColor);
-        $('#color').val('')
+        setBoxColour();
     } 
     else {
-        var boxColor = $('#color').val();
-        addBox(boxColor);
-        $('#color').val('')
+        setBoxColour();
     };
 });
+
+function setBoxColour() {
+    var boxColor = $('#color').val();
+    addBox(boxColor);
+    $('#color').val('')
+}
 
 
 function setPreviewColor(inputColor) {
