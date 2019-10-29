@@ -19,8 +19,9 @@ $(document).on('click', '#add-to-favorite', function() {
         setBoxColour();
     } 
     else {
-        setBoxColour();git 
+        setBoxColour();
     };
+    $('#color').focus();
 });
 
 function setBoxColour() {
@@ -28,7 +29,6 @@ function setBoxColour() {
     addBox(boxColor);
     $('#color').val('')
 }
-
 
 function setPreviewColor(inputColor) {
     $('.preview').css('background-color', inputColor);
